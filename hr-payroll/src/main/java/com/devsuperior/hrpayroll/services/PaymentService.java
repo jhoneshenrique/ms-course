@@ -19,7 +19,7 @@ public class PaymentService {
     private WorkerFeingClient workerFeingClient;
 
     public Payment getPayment(long workerId, int days){
-        
+
         Worker worker = workerFeingClient.findById(workerId).getBody();
         return new Payment(worker.getName(), worker.getDailyIncome(),days);
     }
